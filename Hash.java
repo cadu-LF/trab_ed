@@ -29,7 +29,6 @@ public class Hash {
         int posicao = criaChave(chave);
         this.setPar(chave, valor);
         ListaLigada l = new ListaLigada();
-        l.insereInicio(par);
         if(tabela[posicao] == null){
             tabela[posicao] = l;
         }

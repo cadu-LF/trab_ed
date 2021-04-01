@@ -50,19 +50,20 @@ public class ListaLigada {
         ListaLigada atual = head;
         
         // cria o StringBuilder para poder armazenar os dados da lista
-        StringBuilder builder = new StringBuilder("[");
+        StringBuilder builder = new StringBuilder("{ ");
         
         // cria um for para percorrer todos os elementos da lista
         for(int i = 0; i < tamanho; i++){
             // adiciona o elemento atual à variável builder
+            builder.append("[");
             builder.append(atual.getElemento());
-            builder.append(", ");
+            builder.append("] -> ");
             
             // faz o autal apontar para o póximo elemento da lista
             atual = (ListaLigada) atual.getNext();
         }
         
-        builder.append("]");
+        builder.append("}");
         
         return builder.toString();
     }

@@ -1,4 +1,4 @@
-package br.com.unifacef.trab.ed;
+package br.com.unifacef.trab_ed;
 
 /**
  *

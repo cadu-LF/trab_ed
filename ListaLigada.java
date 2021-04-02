@@ -39,28 +39,6 @@ public class ListaLigada {
         
     }
     
-    public void rmElemento(String elemento){
-        ListaLigada atual = head;
-        ListaLigada anterior = new ListaLigada();
-        int cont = 0;
-        while(atual.elemento != elemento){
-            anterior = atual;
-            atual = (ListaLigada) atual.next;
-            cont++;
-        }
-        
-        if(cont == 0){
-            head = (ListaLigada) head.next;
-            atual.next = null;
-        } else{
-            anterior.next = atual.next;
-            atual.next = null;
-        }
-        
-        
-        tamanho--;
-    }
-    
     @Override
     public String toString(){
         if(tamanho == 0){ // verificar se existe algum elemento na lista

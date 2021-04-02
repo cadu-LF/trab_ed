@@ -27,6 +27,7 @@ public class Hash {
     public void put(String chave, String valor){
     
         int posicao = criaChave(chave);
+        System.out.println(posicao);
         this.setPar(chave, valor);
         ListaLigada l = new ListaLigada();
         if(tabela[posicao] == null){
@@ -52,4 +53,12 @@ public class Hash {
         return hash % 37;
     }
     
+    public void rmElementoPosicao(String elemento, String chave){
+        
+        int posicao = criaChave(chave);
+        System.out.println(posicao);
+        System.out.println(tabela[posicao].toString());
+        tabela[posicao].rmElemento(elemento, posicao);
+        
+    }
 }

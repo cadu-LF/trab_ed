@@ -6,58 +6,59 @@ package br.com.unifacef.trab_ed;
  */
 public class ListaLigada {
     
-    private Object elemento;
-    private Object next;
-    
     int tamanho = 0;
-    ListaLigada head = null;
+    No head = null;
     
     public ListaLigada(){}
     
-    private void setElemento(Object elemento){
-        this.elemento = elemento;
-    }
-    
-    private void setNext(Object next){
-        this.next = next;
-    }
-    
-    public Object getElemento(){
-        return elemento;
-    }
-    
-    public Object getNext(){
-        return next;
-    }
-    
     public void insereElemento(String elemento){
-        ListaLigada novo = new ListaLigada();
-        novo.setElemento(elemento);
+        No novo = new No(elemento);
         novo.setNext(head);
-        head = novo;
-        
+        this.head = novo;
+        System.out.println(novo);
+        System.out.println(head);
         tamanho++;
         
     }
     
-public void rmElemento(String elemento){
-    ListaLigada atual = head;
-    ListaLigada anterior = new ListaLigada();
+public void rmElemento(String elemento, int posicao){
+    System.out.println(head);
+    No atual = head;
+    No anterior = new No();
     int cont = 0;
-    while(atual.elemento != elemento){
+    
+    if(posicao < 10){
+        while(!atual.getValor().substring(4).equals(elemento)){
+            System.out.println(atual.getValor());
+            System.out.println(atual.getValor().substring(4));
+            System.out.println(elemento);
+            System.out.println(atual.getValor().substring(4).equals(elemento));
             anterior = atual;
-            atual = (ListaLigada) atual.next;
+            atual = atual.getNext();
             cont++;
         }
+    } else{
+        while(!atual.getValor().substring(5).equals(elemento)){
+            System.out.println(atual.getValor());
+            System.out.println(atual.getValor().substring(5));
+            System.out.println(elemento);
+            System.out.println(atual.getValor().substring(5).equals(elemento));
+            anterior = atual;
+            atual = atual.getNext();
+            cont++;
+        }
+    }
+    
 
         if(cont == 0){
-            head = (ListaLigada) head.next;
-            atual.next = null;
+            head = head.getNext();
+            atual.setNext(null);
         } else{
-            anterior.next = atual.next;
-            atual.next = null;
+            anterior.setNext(atual.getNext());
+            atual.setNext(null);
         }
         tamanho--;
+    
     }
    
     @Override
@@ -68,7 +69,7 @@ public void rmElemento(String elemento){
         /**
          * cria uma nova celula que representa o primeiro elemento da fila
          */
-        ListaLigada atual = head;
+        No atual = head;
         
         // cria o StringBuilder para poder armazenar os dados da lista
         StringBuilder builder = new StringBuilder("{ ");
@@ -77,11 +78,11 @@ public void rmElemento(String elemento){
         for(int i = 0; i < tamanho; i++){
             // adiciona o elemento atual à variável builder
             builder.append("[");
-            builder.append(atual.getElemento());
+            builder.append(atual.getValor());
             builder.append("] -> ");
             
             // faz o autal apontar para o póximo elemento da lista
-            atual = (ListaLigada) atual.getNext();
+            atual = atual.getNext();
         }
         
         builder.append("}");

@@ -29,7 +29,7 @@ public class ListaLigada {
         return next;
     }
     
-    public void insereInicio(String elemento){
+    public void insereElemento(String elemento){
         ListaLigada novo = new ListaLigada();
         novo.setElemento(elemento);
         novo.setNext(head);
@@ -37,6 +37,28 @@ public class ListaLigada {
         
         tamanho++;
         
+    }
+    
+    public void rmElemento(String elemento){
+        ListaLigada atual = head;
+        ListaLigada anterior = new ListaLigada();
+        int cont = 0;
+        while(atual.elemento != elemento){
+            anterior = atual;
+            atual = (ListaLigada) atual.next;
+            cont++;
+        }
+        
+        if(cont == 0){
+            head = (ListaLigada) head.next;
+            atual.next = null;
+        } else{
+            anterior.next = atual.next;
+            atual.next = null;
+        }
+        
+        
+        tamanho--;
     }
     
     @Override

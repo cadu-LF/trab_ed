@@ -32,7 +32,7 @@ public class Hash {
         if(tabela[posicao] == null){
             tabela[posicao] = l;
         }
-        tabela[posicao].insereInicio(par);
+        tabela[posicao].insereElemento(par);
         
     }
     

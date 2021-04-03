@@ -31,20 +31,29 @@ public class Teste {
         h.put("cadu", "cadu");
         h.put("Carlos", "Carlos");
         h.print();
-       
         System.out.println(h.tamanhoTabela());
+        System.out.println(h.contem());        
         
         System.out.println("");
         System.out.println("");
         h.rmElementoPosicao("cadu", "cadu");
         h.print();
         System.out.println(h.tamanhoTabela());
+        System.out.println(h.contem());
         
         System.out.println("");
         System.out.println("");
         h.rmElementoPosicao("astolfo", "astolfo");
         h.print();
         System.out.println(h.tamanhoTabela());
+        System.out.println(h.contem());
+        
+        System.out.println("");
+        System.out.println("");
+        h.rmElementoPosicao("Carlos", "Carlos");
+        h.print();
+        System.out.println(h.tamanhoTabela());
+        System.out.println(h.contem());
         
     }
     

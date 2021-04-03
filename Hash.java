@@ -73,4 +73,8 @@ public class Hash {
         return qtde;
     }
     
+    public boolean contem(){
+        return this.tamanhoTabela() != 0;
+    }
+    
 }

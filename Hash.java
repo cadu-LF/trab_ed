@@ -61,4 +61,16 @@ public class Hash {
         tabela[posicao].rmElemento(elemento, posicao);
         
     }
+    
+    public int tamanhoTabela(){
+        int qtde = 0;
+        for(ListaLigada elemento : tabela){
+            if(elemento != null){
+                qtde += elemento.tamanho;
+            }
+        }
+        
+        return qtde;
+    }
+    
 }

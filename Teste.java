@@ -32,16 +32,20 @@ public class Teste {
         h.put("Carlos", "Carlos");
         h.print();
        
+        System.out.println(h.tamanhoTabela());
+        
         System.out.println("");
         System.out.println("");
         h.rmElementoPosicao("cadu", "cadu");
         h.print();
+        System.out.println(h.tamanhoTabela());
         
         System.out.println("");
         System.out.println("");
         h.rmElementoPosicao("astolfo", "astolfo");
         h.print();
-
+        System.out.println(h.tamanhoTabela());
+        
     }
     
 }
